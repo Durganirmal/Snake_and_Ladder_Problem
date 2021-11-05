@@ -1,12 +1,13 @@
 package com.Snake_And_Ladder_Problem;
 
 public class Snake_And_Ladder_Problem {
-
+	 static int diceCount = 0;
 	
 	public static void main(String[] args) {
 		System.out.println( "Welcome to Snake And Ladder Problem" );
 		int startPosition = 0;
 		while (startPosition != 100) {
+			diceCount++;
             int dieRoll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
             System.out.println("Die Rolled:" + dieRoll);
             int checkOption = (int) Math.floor(Math.random() * 10) % 3;
@@ -27,6 +28,10 @@ public class Snake_And_Ladder_Problem {
                     startPosition -= dieRoll;
                 }
             }
+            System.out.println(dieRoll);
+            System.out.println("Player Position After Dice Roll " + startPosition);
         }
-	}
+        System.out.println("Number Of times Dice Roll To Win " + diceCount);
+    }
+
 }
